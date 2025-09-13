@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "LeetNotes",
+    "version": "1.0.0",
+    "description": "Automatically capture Leetcode solutions and generate structured UMPIRE notes, saving everything to GitHub.",
+    "action": {
+        "default_popup": "index.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://leetcode.com/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "permissions": ["activeTab", "storage", "scripting"],
+    "host_permissions": ["https://leetcode.com/*"]
+}
+  
